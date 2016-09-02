@@ -1,0 +1,16 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+   polcodeproduct.admin.category:
+      class: PolcodeProductBundle\Admin\CategoryAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Products Management, label: Categories }
+      arguments: [null, PolcodeProductBundle\Entity\Category, PolcodeProductBundle:CategoryAdmin]
+   polcodeproduct.admin.product:
+      class: PolcodeProductBundle\Admin\ProductAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Products Management, label: Products }
+      arguments: [null, PolcodeProductBundle\Entity\Product, PolcodeProductBundle:ProductAdmin]
